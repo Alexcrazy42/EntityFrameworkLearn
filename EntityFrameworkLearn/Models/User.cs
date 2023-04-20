@@ -10,5 +10,6 @@ namespace EntityFrameworkLearn.Models
     {
         public int UserId { get; set; }
         public string UserNickname { get; set; }
+
     }
 }
