@@ -1,8 +1,11 @@
 ﻿using EntityFrameworkLearn.Data;
 using EntityFrameworkLearn.Models;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 
 var db = new UserContext();
+
+
 
 ////// SELECT
 //var users = db.Users
@@ -61,6 +64,35 @@ var db = new UserContext();
 //    Where(u => new int[] { 1, 23, 4 }.Contains(u.UserId))
 //    .ToList();
 
+
+//// NEATED SUBQUERIES ???
+//var users = db.Users
+//    .Where(u1 => 
+//    (db.Users.Where(u => u.UserId < 25).Select(u => u.UserNickname).ToList().Contains(u1.UserNickname)))
+//    .ToList();
+
+//foreach (var user in users)
+//{
+//    Console.WriteLine($"{user.UserId} {user.UserNickname}");
+//}
+
+
+//// INNER JOIN 
+//var usersCars = db.Users
+//    .Join(db.Cars,
+//    user => user.UserId,
+//    car => car.UserId,
+//    (user, car) => new { User = user, Car = car })
+//    .ToList();
+
+
+// LEFT JOIN 
+
+
+//foreach (var userCar in userCars)
+//{
+//    Console.WriteLine($"{userCar.User.UserId} {userCar.User.UserNickname} {userCar.Car.CarName}");
+//}
 
 
 //// INSERT
