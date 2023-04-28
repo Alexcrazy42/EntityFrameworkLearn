@@ -13,11 +13,9 @@ var db = new UserContext();
 //    .Where(u => u.UserId >= 17)
 //    .ToList();
 
-
 //var usersByLinq = from user in db.Users
-//                  where user.UserId >= 17
+//                  where user.UserId >= 17 && user.UserNickname.Substring(0, 1) == "a"
 //                  select user;
-
 
 
 
